@@ -2,7 +2,8 @@
 void Main()
 {
     PrintMenu();
-    GetOption();
+    int option = InputOption();
+    GetMessage(option);
 }
 static void PrintMenu()
 {
@@ -13,17 +14,44 @@ static void PrintMenu()
     Console.WriteLine("4. Hello in Italian");
     Console.WriteLine("0. Exit application");
 }
-static void GetOption()
+static int InputOption()
 {
-    string option = Console.ReadLine();
+    Console.WriteLine("Please select an option");
+    string UserInput = Console.ReadLine();
 
     try
     {
-
+        int option  = Convert.ToInt32(UserInput);
+        return option;
     }
-    catch
+    catch (Exception ex)
     {
-
+        Console.WriteLine($"Error. {ex.Message}");
+        return InputOption();
     }
 }
 
+static void GetMessage(int option)
+{
+    switch (option)
+    {
+        case 0:
+            Console.WriteLine("Goodbye");
+            break;
+        case 1:
+            Console.WriteLine("Bonjour");
+            break;
+        case 2:
+            Console.WriteLine("Hola");
+            break;
+        case 3:
+            Console.WriteLine("Hallo");
+            break;
+        case 4:
+            Console.WriteLine("Ciao");
+            break;
+        default:
+            Console.WriteLine("Invalid option. Please try again.");
+            break;
+    }
+}
