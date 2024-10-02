@@ -68,3 +68,11 @@ static void GetMessage(int option)
             break;
     }
 }
+
+/* Task 5 
+ * 
+ * Console.WriteLine("Enter a string:");
+String UserInput = Console.ReadLine();
+int Length = UserInput.Length;
+Console.WriteLine("Number of words = {0}", Length);
+/*
