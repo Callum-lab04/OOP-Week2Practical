@@ -1,9 +1,22 @@
-﻿Main();
+﻿/*
+ * Practical 2
+ * Information: Methods demo
+ * Version 1
+ * Author Callum McConnell
+ * Date: October 2024
+ */
+
+Main();
 void Main()
 {
-    PrintMenu();
-    int option = InputOption();
-    GetMessage(option);
+    int option;
+    do
+    {
+        PrintMenu();
+        option = InputOption();
+        GetMessage(option);
+    }
+    while (option != 0);
 }
 static void PrintMenu()
 {
